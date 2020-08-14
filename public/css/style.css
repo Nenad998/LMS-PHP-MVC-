@@ -1,0 +1,36 @@
+.navbar{
+    list-style-type: none;
+    }
+
+ .skola{
+     font-size: 20px;
+     color: ghostwhite;
+ }
+ #ime{
+    
+    color: white;
+ }
+ 
+  #logout{
+    text-decoration: none;
+    color: white;
+
+  }  
+#pogledaj_lekc{
+    text-decoration: none;
+}
+#pogl_zad{
+    text-decoration: none;
+}
+
+
+    
+    
+ @media screen and (max-width:576px) {
+     .kursevi{
+        margin-top: 20px;
+    }
+       
+            
+        
+}
