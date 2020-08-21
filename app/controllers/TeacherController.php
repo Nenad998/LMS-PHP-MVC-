@@ -16,7 +16,8 @@ use Validation;
     {
         is_teacher();
         $course_model=new Course;
-        $courses=$course_model->selectAll();
+        $current_teacher= curr_user();
+        $courses=$course_model->SelectWhere(['teacher_id'=>$current_teacher->id]);
    
         return view('courses',compact('courses'));
     }
