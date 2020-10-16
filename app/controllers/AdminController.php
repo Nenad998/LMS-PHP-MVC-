@@ -19,7 +19,7 @@ use Validation;
         return view('adminPanel',compact('courses'));
     }
 
-    public function addCourses()  // view the course course addition form
+    public function addCourses()  // view the course addition form
     {
         is_admin();
         $user= new User;
