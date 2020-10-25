@@ -39,7 +39,7 @@ trait Validation{
 
             if($key=='admin'){
 
-                $re= '/^[a-zA-Z0-9\\\\\/\.\,\-\@\$\%\&\?\!]{1,}$/m';
+                $re= '/^[a-zA-Z0-9\/\.\,\-\@\$\%\&\?\!\s]{1,}$/m';
                   
                 if(!preg_match_all($re, $value)){
                     $this->errors[]='Polje nije validno';
@@ -49,7 +49,7 @@ trait Validation{
 
             if($key=='teacher'){
 
-                $re= '/^[a-z A-Z 0-9\\\\\/\.\,\-\@\$\%\&\?\!]{1,}$/m';
+                $re= '/^[a-zA-Z0-9\/\.\,\-\@\$\%\&\?\!\s]{1,}$/m';
                   
                 if(!preg_match_all($re, $value)){
                     $this->errors[]='Polje nije validno';
@@ -58,7 +58,7 @@ trait Validation{
 
             if($key=='student'){
 
-                $re= '/^[a-zA-Z0-9\\\\\/\.\,\-\@\$\%\&\?\!]{1,}$/m';
+                $re= '/^[a-zA-Z0-9\/\.\,\-\@\$\%\&\?\!\s]{1,}$/m';
                   
                 if(!preg_match_all($re, $value)){
                     $this->errors[]='Polje nije validno';
