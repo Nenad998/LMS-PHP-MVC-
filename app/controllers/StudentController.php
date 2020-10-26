@@ -94,8 +94,6 @@ use Validation;
         $users_work_model= new UsersWork;
         $_POST['user_id']=curr_user()->id;
         $_POST['exercises_id']=$_GET['exercise_id'];
-        $file=$users_work_model->addFile('document','files');
-        $_POST['document']=$file;
 
         $usersWork=$users_work_model->insert($_POST);
         
