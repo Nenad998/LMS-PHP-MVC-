@@ -33,11 +33,7 @@
 
             <p class="form_parag">Sadrzaj lekcije</p>
             <textarea name="content" class="textarea_std" rows="12" cols="100" ></textarea>
-            <!--
-            <div>
-            <p class="form_parag">Izaberi fajl</p>
-            <input type="file" name="document">
-            </div> -->
+           
 
 
 
