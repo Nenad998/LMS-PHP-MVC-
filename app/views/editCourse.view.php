@@ -1,59 +1,68 @@
 <?php require 'partials/header.php';  ?>
 
-  <div class="container-fluid"> 
-      <div class="row  p-2" style='background-color:#4f4d49';> 
-          <div> 
-            <span class="text-white"> uredi kurs </span>
-          </div> 
+<div class="under_nav">
 
-      </div>
+    <p class="under_nav_parag">Uredi kurs</p>
 
-      <?php if(isset($_SESSION['errors'])){
-        foreach($_SESSION['errors'] as $er){
-            ?> 
-            <div class="alert alert-danger text-center" role="alert">
-                 <?php echo $er;?>
+</div>
+
+<div class="std_exercise_txt">
+
+    <div class="std_exe_txt"></div>
+    <div class="std_exe_txt">
+
+        <?php if(isset($_SESSION['errors'])){
+            foreach($_SESSION['errors'] as $er){
+                ?>
+                <div class="flash_message" role="alert">
+                    <?php echo $er;?>
+                </div>
+                <?php
+            }
+            unset($_SESSION['errors']);
+        } ?>
+
+
+
+        <form action="editCourse_post?edit_id=<?php echo $_GET['id']; ?>" method="post" enctype="multipart/form-data">
+
+            <p class="form_parag">Naziv kursa</p>
+            <input class="input_lec" type="text"  value="<?php echo $courses->name;?>" name="name">
+
+            <p class="form_parag">Sadrzaj kursa</p>
+            <textarea name="description" class="textarea_std" rows="12" cols="100"><?php echo $courses->description;?>"</textarea><br>
+            <div>
+                <select class="select_teacher"  name="teacher_id">
+                    <option><p class="form_parag">Izaberi profesora</p></option>
+                    <?php foreach($users as $user) {    ?>
+                        <option value="<?php echo $user->id;?>"> <?php echo $user->name;  ?>  </option>
+                    <?php } ?>
+
+                </select
             </div>
-            <?php
-        }
-        unset($_SESSION['errors']);       
-    } ?>
 
-      <form  action="editCourse_post?edit_id=<?php echo $_GET['id']; ?>" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-        <p class="mt-3"><b>  naziv kursa   </b></p>
-          <input type="text" name="name" class="form-control col-xl-4 col-6"  value="<?php echo $courses->name;?>">
-        </div>
-
-          <div class="form-group">
-            <p class="mt-3"><b>  sadrzaj  </b></p>
-            <textarea  name="description" class="form-control col-xl-6 col-10"  rows="7"><?php echo $courses->description;?></textarea>
-          </div>
-
-          <div class="form-group col-xl-2">
-            <p class="mt-3"><b>izaberi fajl  </b></p>
-            <input type="file" name="cover_image" value="<?php echo $courses->created_at;?>" class="form-control-file">
-          </div>
-
-          <div class="form-group col-xl-2">
-            
-            <select class="form-control"  name="teacher_id">
-              <option>Izaberi profesora</option>
-              <?php foreach($users as $user) {    ?> 
-                <option value="<?php echo $user->id;?>"> <?php echo $user->name;  ?>  </option>
-                <?php } ?>
-            </select>
-          </div>
-          
+            <div>
+                <p class="form_parag">Uredi cenu</p>
+                <input type="number" class="input_course" value="<?php echo $courses->price;?>" name="price">
+            </div>
 
 
-          <button type="submit" class="btn btn-primary col-xl-2 col-4 btn-block mt-2">Uredi</button>
+
+            <button type="submit" class="deliver_exercise_button">Uredi</button>
 
         </form>
-      
+
+
 
 
     </div>
+
+    <div class="std_exe_txt"></div>
+
+
+
+</div>
+
 
 
 </body>
