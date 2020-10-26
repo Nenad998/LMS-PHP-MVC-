@@ -1,34 +1,30 @@
 <?php require 'partials/header.php';  ?>
 
-  <div class="container-fluid mt-2  h-75 d-inline-block ">
-    <div class="row "> 
-      <div class="col-sm-12 col-xl-12 text-center p-2" style='background-color:#4f4d49';>
 
-          <h4 class="text-white"><?php echo  $course->name;  ?></h4>   
+<div class="under_nav">
 
-              </div>
-            </div>
-            <table class="table   text-center mt-3">
-               <thead>
-                   <tr>
-                     <th scope="col">Naziv</th>
-                     <th scope="col">Pogledaj lekciju </th>
-           
-                   </tr>
-                </thead>
-                <tbody>
-                <?php foreach($course->lecture as $lec){ ?> 
-                     <tr>
+    <p class="under_nav_parag"><?php echo  $course->name;  ?></p>
 
-                       <td> <?php echo $lec->name; ?>    </td>
-                       <td><a id="pogledaj_lekc" href="student_lecture?id=<?php echo $lec->id;?>"><button class="btn btn-primary btn-block">Pogledaj lekciju</button></a></td>
+</div>
 
-                     </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+<div class="std_lecture_txt">
 
-          </div>
+    <div class="std_item_txt"></div>
+    <div class="std_item_txt"><p><?php echo $course->description;?></p></div>
+    <div class="std_item_txt"></div>
+
+
+
+</div>
+
+<div class="std_lecture_course">
+    <?php foreach($course->lecture as $lec){ ?>
+        <div class="std_item"><b><?php echo $lec->name; ?></b></div>
+        <div class="std_item" id="item"><a href="student_lecture?id=<?php echo $lec->id;?>">Pogledaj lekciju </a></div>
+        <div class="std_item"></div>
+
+    <?php } ?>
+</div>
 
 </body>
 </html>
