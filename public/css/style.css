@@ -1,36 +1,558 @@
-.navbar{
+* {
+    padding: 0;
+    margin: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* navigation */
+
+.navigation_ul{
     list-style-type: none;
+    margin: 0px;
+    padding: 15px 0 15px 0px;
+    overflow: hidden;
+    background-color: #009432;
+}
+.nav_a {
+    color: #fff;
+    text-decoration: none;
+}
+.nav_a:hover{
+    text-decoration: none!important;
+    color: #fff!important;
+}
+
+.logo_name{
+    float: left;
+    color: #fff;
+    margin-left: 30px;
+    font-size: 20px;
+}
+.right_data{
+    float: right;
+    color: #fff;
+    margin-right: 30px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* end navigation */
+
+/* under navigation part */
+.under_nav{
+    padding: 15px;
+    background: #4b4b4b;
+    color: #fff;
+    text-align: center;
+}
+.under_nav_parag{
+    font-size: 1.30em;
+    margin: 0px;
+}
+/* end under navigation part */
+
+/* buy button */
+
+.buy_course_button{
+    font-family: sans-serif;
+    font-size: 1.4em;
+    line-height: normal;
+    margin-left: 15px;
+    margin-top: 20px;
+    color: #ffffff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: #1289A7;
+    border-radius: 8px;
+    width: 160px;
+    text-align: center;
+}
+.buy_course_button:focus {
+    outline: none;
+}
+
+
+/* end buy button */
+
+/* courses */
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+    margin: 20px;
+}
+.card {
+    background:#009432;;
+    border-radius: 5px;
+}
+
+.card-body {
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+.btn{
+    margin: 0 auto;
+    position: relative;
+    color: #fff;
+    padding: 12px;
+    background-color: #4b4b4b;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+    border-radius: 5px;
+}
+.btn .btn_a{
+    color: white;
+    text-decoration: none;
+}
+.btn .btn_a:hover{
+    text-decoration: underline;
+}
+.card-subject{
+    margin: 0;
+    padding-top: 20px;
+    color: #fff;
+}
+.card-name{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+p.card-name a{
+    color:white;
+    text-decoration: none;
+}
+p.card-name a:hover{
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 550px) and (max-width: 800px) {
+
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        margin: 20px;
+    }
+}
+@media only screen and (min-width: 310px) and (max-width: 550px) {
+
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1em;
+        margin: 20px;
+    }
+}
+/* end courses */
+
+/* teacher on course */
+
+.form-container {
+    display: flex;
+    height: 98vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.form-container .form-wrap {
+    background: #fff;
+    width: 40%;
+    padding: 15px 20px;
+}
+.form-container .form-wrap h1 {
+    text-align: center;
+    margin: 0px 0px 20px;
+    font-size: 25px;
+}
+.form-container .form-wrap .form-box {
+    margin: 0px 0px 15px;
+}
+.name_prof{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #4b4b4b;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+
+    .form-container .form-wrap {
+        background: #fff;
+        width: 60%;
+        padding: 15px 20px;
+    }
+}
+/* end teacher on course */
+
+
+/* single lecture with exercises */
+
+
+.std_lecture_txt {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 10px;
+}
+.std_item_txt {
+    padding: 10px;
+    font-size: 17px;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.std_lecture {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.std_item {
+
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+#item{
+    padding:10px;
+    background: #1289A7;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+#item a{
+    color: white;
+    text-decoration: none;
+}
+#item a:hover{
+    text-decoration: underline;
+}
+
+
+/*  end single lecture with exercises */
+
+/* single exercise */
+
+.std_exercise_txt {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 10px;
+}
+.std_exe_txt {
+    padding: 10px;
+    font-size: 17px;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-family: 'Oxygen', sans-serif;
+}
+.deadline_std{
+    margin-bottom: 20px;
+}
+.content_exe_std{
+    margin-bottom: 20px;
+}
+.deliver_exercise_button{
+    font-family: sans-serif;
+    font-size: 1.2em;
+    line-height: normal;
+    margin-top: 20px;
+    color: #ffffff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: #1289A7;
+    border-radius: 8px;
+    width: 160px;
+    text-align: center;
+}
+
+.deliver_exercise_button:focus {
+    outline: none;
+}
+
+/* end single exercise */
+
+/* add homework */
+
+.textarea_std{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.textarea_std::placeholder{
+    font-size: 18px;
+    padding-left: 10px;
+    outline: none;
+}
+.textarea_std:focus {
+    outline: none;
+}
+
+/* end add homework */
+
+/* all students on course */
+
+.form-container-prof {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.form-container-prof .form-wrap-prof {
+    background: #fff;
+    width: 40%;
+    padding: 15px 20px;
+}
+.form-container-prof .form-wrap-prof h1 {
+    text-align: center;
+    margin: 0px 0px 20px;
+    font-size: 25px;
+}
+.form-container-prof .form-wrap-prof .form-box-prof {
+    margin: 0px 0px 15px;
+}
+.name_prof-prof{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #4b4b4b;
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+
+    .form-container-prof .form-wrap-prof {
+        background: #fff;
+        width: 60%;
+        padding: 15px 20px;
+    }
+}
+/* end all students on course */
+
+
+/* other little part in project */
+
+.deadline_teacher{
+    margin-top: 20px;
+}
+
+.std_lecture_course {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    padding: 10px;
+}
+.select_teacher{
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #4f4d49;
+}
+.select_teacher:focus{
+    outline: none;
+}
+/* end */
+
+/* add lecture */
+
+.input_lec{
+    width: 100%;
+    margin-bottom: 10px;
+    height: 30px;
+    font-size: 16px;
+
+}
+.input_lec:focus{
+    outline: none;
+}
+/* end add lecture */
+
+
+/* add course admin */
+
+.input_course{
+    width: 155px;
+    margin-bottom: 10px;
+    height: 30px;
+    font-size: 16px;
+
+}
+.input_course:focus{
+    outline: none;
+}
+
+/* end add course admin */
+
+
+/* flash messages */
+
+.flash_message{
+    width:100%;
+    color: #ffffff;
+    background: #d63031;
+    font-size: 22px;
+    margin-bottom: 10px;
+    padding: 10px 0 20px 0;
+    text-align: center;
+}
+
+/* end flash messages */
+
+/* table in grid css */
+
+
+.std_lecture_teacher {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+    grid-column-gap: 2%;
+}
+
+.std_item {
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+    margin-bottom: 20px;
+
+}
+
+#look{
+    padding:10px;
+    background: #1289A7;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+#look a{
+    color: #fff;
+    text-decoration: none;
+}
+#look a:hover{
+    text-decoration: underline;
+}
+
+#edit{
+    padding:10px;
+    background: #ffa801;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#edit a{
+    color: #fff;
+    text-decoration: none;
+}
+#edit a:hover{
+    text-decoration: underline;
+}
+
+#delete{
+    padding:10px;
+    background: #c0392b;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+#delete a{
+    color: #fff;
+    text-decoration: none;
+}
+#delete a:hover{
+    text-decoration: underline;
+}
+
+#done{
+    padding:10px;
+    background: #009432;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+#done a{
+    color: #fff;
+    text-decoration: none;
+}
+#done a:hover{
+    text-decoration: underline;
+}
+
+#name_exe{
+    padding:10px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+#name_exe a{
+    color: #4f4d49;
+    text-decoration: none;
+}
+#name_exe:hover{
+    text-decoration: underline;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 649px) {
+
+    #look{
+        width: 70%;
+        height: 45%;
+    }
+    #edit{
+        width: 60%;
+        height: 30%;
+    }
+    #delete{
+        width: 60%;
+        height: 30%;
     }
 
- .skola{
-     font-size: 20px;
-     color: ghostwhite;
- }
- #ime{
-    
-    color: white;
- }
- 
-  #logout{
-    text-decoration: none;
-    color: white;
-
-  }  
-#pogledaj_lekc{
-    text-decoration: none;
-}
-#pogl_zad{
-    text-decoration: none;
-}
-
-
-    
-    
- @media screen and (max-width:576px) {
-     .kursevi{
-        margin-top: 20px;
+    .std_item {
+        width: 60%;
+        height: 30%;
+        padding: 10px 0 10px 0;
     }
-       
-            
-        
+
+    #done{
+        width: 70%;
+        height: 45%;
+    }
+
+    #name_exe{
+        width: 60%;
+        height: 30%;
+    }
+
+    .std_lecture_teacher {
+        padding: 10px 5px 0 5px;
+    }
+
 }
+/* end table */
+
+/* custom table */
+
+.table{
+    width: 100%;
+}
+.th{
+    font-size: 18px;
+    padding:20px;
+}
+#name{
+    color: #4f4d49;
+    text-align:center;
+    font-size: 17px;
+}
+
+/* end custom table */
