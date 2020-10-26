@@ -1,30 +1,28 @@
 <?php require 'partials/header.php';  ?>
 
-  <div class="container-fluid mt-2  h-75 d-inline-block ">
-    <div class="row "> 
-      
-        <div class="col-xl-2"> </div>
-        <div class="col-xl-8 mt-3"> 
-            <p><b><?php  if(strtotime($exercises->dates) < strtotime(date('y-m-d'))){ echo "ROK NIJE VAZECI";} ?> </b> </p><br><br>
+<div class="under_nav">
 
-             <p><b>Napomena: </b> <p>  <?php echo $exercises->notice;     ?> </p></p><br><br>
+    <p class="under_nav_parag"><?php echo  $exercises->name;  ?></p>
 
-              <p class="text-justify"><p><?php echo $exercises->content;  ?> </p></p>  
+</div>
 
-          
-     
-     
-              <a id="pogledaj_lekc" href="completed_task_std?exe_id=<?php echo $exercises->id;?>"><button class="btn btn-primary mt-2">Predaj zadatak</button></a>
-            </div>
-            
-          <div class="col-xl-2">  </div>
-        
-        </div>
-        
+<div class="std_exercise_txt">
+
+    <div class="std_exe_txt"></div>
+    <div class="std_exe_txt"><p class="deadline_std"><b><?php  if(strtotime($exercises->dates) < strtotime(date('y-m-d'))){ echo "ROK NIJE VAZECI";} ?></b></p>
+
+        <p class="content_exe_std"><b>Sadrzaj:</b></p><p><?php echo $exercises->content;  ?></p>
+
+        <a href="completed_task_std?exe_id=<?php echo $exercises->id;?>"> <button class="deliver_exercise_button">Predaj zadatak</button> </a>
+
+    </div>
+
+    <div class="std_exe_txt"></div>
 
 
 
-         </div>
+</div>
+
 
 </body>
 </html>
