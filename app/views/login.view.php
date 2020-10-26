@@ -11,7 +11,7 @@
 <?php if(isset($_SESSION['errors'])){
         foreach($_SESSION['errors'] as $er){
             ?> 
-            <div class="alert alert-danger text-center" role="alert">
+            <div class="flash_message" role="alert">
                  <?php echo $er;?>
             </div>
             <?php
@@ -22,7 +22,7 @@
 
 <div class="container-fluid h-100">
     <div class="row justify-content-center align-items-center h-100">
-        <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-4">
+        <div class="col-12 col-sm-9 col-md-6 col-lg-6 col-xl-4">
             <form class="form-container" action="login_post" method="post">
 			 <h4 class="text-center font-weight-bold">Prijavi se</h4>
 				 <div class="form-group">
@@ -36,11 +36,11 @@
                 </div>
 				 <div class="mt-0">
         
-		         <p class="mt-2" style="color: blue;"><a href="#"> <b>Zaboravio si nalog? </b> </a></p>
+		         <p class="login_pass" style="color: blue;"><a href="#"> <b>Zaboravio si lozinku </b> </a></p>
                   </div>
 				   <div class="mt-0">
         
-		         <p class="mt-2" style="color: blue;"><a href="register"> <b>Registruj se </b> </a></p>
+		         <p class="login_pass" style="color: blue;"><a href="register"> <b>Registruj se </b> </a></p>
                   </div>
             </form>
         </div>
