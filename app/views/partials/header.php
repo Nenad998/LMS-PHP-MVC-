@@ -3,31 +3,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body>
 
 
-  <nav class="navbar justify-content-between fixed-top" style='background-color:#058205';>
- 
-    
-          <li class="nav-item">
-            <p class="nav-item skola">skola programiranja </p>
-          </li>
-       
-          
-         
-          
-          <li class="nav-item">
-          <?php if(curr_user()) { ?>
+<ul class="navigation_ul">
+    <li class="logo_name"><a class="nav_a" <p>E-ucionica</p> </a></li>
+    <li class="right_data"><a class="nav_a" href="logout">Odjavi se</a></li>
+    <?php if(curr_user()->role_id == 1) { ?>
+    <li class="right_data"><a class="nav_a" <p><?php echo "Ucenik: " . curr_user()->name;  ?></p> </a></li>
 
-            <a id="ime" class="navbar-brand"><?php echo curr_user()->name;  ?>  </a>  <?php } ?>
-             <a id="logout" class="nabar-brand" href="logout">Logout</a>
-          
-          </li>
-        
-         
-  </nav>  
+    <?php } if(curr_user()->role_id == 2){ ?>
 
-  <br><br>
+    <li class="right_data"><a class="nav_a" <p><?php echo "Profesor: " . curr_user()->name;  ?></p> </a></li>
+
+    <?php } if(curr_user()->role_id == 3){ ?>
+
+        <li class="right_data"><a class="nav_a" <p><?php echo "Admin: " . curr_user()->name;  ?></p> </a></li>
+
+ <?php }  ?>
+</ul>
