@@ -66,7 +66,6 @@ use Validation;
         is_teacher();
         $validate=$this->validate([
             'teacher'=>$_POST['name'],
-            'teacher'=>$_POST['short_description'],
             'teacher'=>$_POST['content'],
            
             
@@ -82,8 +81,6 @@ use Validation;
 
         $lecture_model= new Lecture;
         $_POST['course_id']=$_GET['course_id'];
-        $file=$lecture_model->addFile('document','files');
-        $_POST['document']=$file;
     
         $lecture=$lecture_model->insert($_POST);
 
@@ -104,7 +101,6 @@ use Validation;
         is_teacher();
         $validate=$this->validate([
             'teacher'=>$_POST['name'],
-            'teacher'=>$_POST['short_description'],
             'teacher'=>$_POST['content'],
 
 
@@ -120,10 +116,6 @@ use Validation;
              }
 
         $lecture_model= new Lecture;
-        $file=$lecture_model->addFile('document','files');
-        $_POST['document']=$file;
-      
-        
      
         $lecture_model->updates($_POST,'id',$_GET['edit_id']);
 
@@ -204,7 +196,6 @@ use Validation;
         is_teacher();
         $validate=$this->validate([
            'teacher'=>$_POST['name'],
-           'teacher'=>$_POST['notice'],
            'teacher'=>$_POST['content'],
         
         
@@ -219,8 +210,6 @@ use Validation;
 
         $exercise_model=new Exercise;
         $_POST['lecture_id']=$_GET['lecture_id'];
-        $file=$exercise_model->addFile('document','files');
-        $_POST['document']=$file;
 
         $exercise=$exercise_model->insert($_POST);
   
@@ -244,7 +233,6 @@ use Validation;
         is_teacher();
         $validate=$this->validate([
            'teacher'=>$_POST['name'],
-           'teacher'=>$_POST['notice'],
            'teacher'=>$_POST['content'],
         
         
@@ -258,8 +246,6 @@ use Validation;
         } 
 
         $exercise= new Exercise;
-        $file=$exercise->addFile('document','files');
-        $_POST['document']=$file;
  
         $exercises=$exercise->updates($_POST,'id',$_GET['edit_id']);
 
