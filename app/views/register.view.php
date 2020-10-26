@@ -9,7 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
    
-    <link rel="stylesheet" type="text/css" href="public/css/register.css">
+    <link rel="stylesheet" type="text/css" href="public/css/login.css">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
 
 <div class="container-fluid h-100">
     <div class="row justify-content-center align-items-center h-100">
-        <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-4">
+        <div class="col-12 col-sm-9 col-md-6 col-lg-6 col-xl-4">
             <form action="register_post" class="form-container" method="post">
 			 <h4 class="text-center font-weight-bold">Registruj se</h4>
                 <div class="form-group">
@@ -39,11 +39,11 @@
                     <input class="form-control form-control-lg" name="password" placeholder="Unesi password" type="password">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-info btn-lg btn-block">Submit</button>
+                    <button class="btn btn-info btn-lg btn-block">Registruj se</button>
                 </div>
 				 <div class="mt-0">
         
-		         <p class="mt-2" style="color: blue;"><a href="login"> <b>Prijavi se </b> </a></p>
+		         <p class="login_pass" style="color: blue;"><a href="login"> <b>Prijavi se </b> </a></p>
                   </div>
             </form>
         </div>
