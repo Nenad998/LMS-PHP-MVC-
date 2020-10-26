@@ -1,30 +1,28 @@
 <?php require 'partials/header.php';  ?>
 
+<div class="under_nav">
+
+    <p class="under_nav_parag">Opis kursa</p>
+
+</div>
+
+
+<div class="std_exercise_txt">
+
+    <div class="std_exe_txt"></div>
+    <div class="std_exe_txt">
+
+        <p class="content_exe_std"><b>Opis:</b></p><p><?php echo $courses->description;  ?></p>
 
 
 
-<div class="container-fluid mt-2  h-75 d-inline-block ">
-    <div class="row "> 
-      
-        <div class="col-xl-2"> </div>
-        <div class="col-xl-8 mt-3"> 
-                 
+    </div>
 
-              <p class="text-justify"><?php echo $courses->description; ?> </p>  
-                    
-           
-          
-            </div>
-            
-          <div class="col-xl-2">  </div>
-        
-        </div>
-        
+    <div class="std_exe_txt"></div>
 
 
 
-         </div>
-
+</div>
 
 
 </body>
