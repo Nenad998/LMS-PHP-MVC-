@@ -1,48 +1,52 @@
 <?php require 'partials/header.php';  ?>
 
+<div class="under_nav">
+
+    <p class="under_nav_parag">Predaj zadatak</p>
+
+</div>
 
 
-  <div class="container-fluid" > 
-      <div class="row  p-2" style='background-color:#4f4d49';> 
-          <div> 
-            <span class="text-white"> predaj zadatak </span>
-          </div> 
 
-      </div>
+<div class="std_exercise_txt">
 
-      <?php if(isset($_SESSION['errors'])){
-        foreach($_SESSION['errors'] as $er){
-            ?> 
-            <div class="alert alert-danger text-center" role="alert">
-                 <?php echo $er;?>
-            </div>
-            <?php
-        }
-        unset($_SESSION['errors']);       
-    } ?>
+    <div class="std_exe_txt"></div>
+    <div class="std_exe_txt">
 
-      <form action="completed_task_std_post?exercise_id=<?php echo $_GET['exe_id'];?>" method="post" enctype="multipart/form-data">
+        <?php if(isset($_SESSION['errors'])){
+            foreach($_SESSION['errors'] as $er){
+                ?>
+                <div class="flash_message">
+                    <?php echo $er;?>
+                </div>
+                <?php
+            }
+            unset($_SESSION['errors']);
+        } ?>
 
-          <div class="form-group">
-            <p class="mt-3"><b>  sadrzaj  </b></p>
-            <textarea name="content" class="form-control col-xl-6 col-10" placeholder="napisi zadatak" rows="7"></textarea>
-          </div>
+        <p class="content_exe_std"><b>Sadrzaj:</b></p>
 
-          <div class="form-group">
-            <p class="mt-3"><b>izaberi fajl  </b></p>
-            <input type="file" name="document" class="form-control-file" id="exampleFormControlFile1">
-          </div>
-         
+        <form action="completed_task_std_post?exercise_id=<?php echo $_GET['exe_id'];?>" method="post" enctype="multipart/form-data">
+            <textarea name="content" class="textarea_std" rows="12" cols="100" placeholder="napisi zadatak"></textarea>
 
 
-          <button type="submit" class="btn btn-primary col-xl-2 col-4 btn-block mt-2">Predaj</button>
+            <button type="submit" class="deliver_exercise_button">Predaj zadatak</button>
 
         </form>
-      
+
+
 
 
     </div>
-  
+
+    <div class="std_exe_txt"></div>
+
+
+
+</div>
+
+
+
 
 </body>
 </html>
