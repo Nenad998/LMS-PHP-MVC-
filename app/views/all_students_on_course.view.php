@@ -1,19 +1,31 @@
 <?php require 'partials/header.php';  ?>
 
 
-  <div class="container-fluid mt-2  h-75 d-inline-block ">
-    <div class="row "> 
-      <div class="col-xl-2"> </div>
-      <div class="col-xl-8 mt-3"> <p><b>Ucenici na ovom kursu su:</b> </p>
-        <?php  foreach($std as $st) {  ?>
-          <p> <?php echo $st->user->name;   ?> </p>
+<style>
+    body {
+        background: #e4e4e4;
+    }
 
-          <?php }  ?>
+</style>
 
-       </div>
-        <div class="col-xl-2">  </div>
-     </div>
-  </div>
+<div class="form-container-prof">
+
+    <form class="form-wrap-prof">
+
+
+
+        <h1>Ucenici na kursu</h1>
+        <div class="form-box-prof">
+            <?php  foreach($std as $st) {  ?>
+
+                <p class="name_prof-prof"><?php echo $st->user->name;   ?> </p>
+
+            <?php }  ?>
+
+        </div>
+    </form>
+
+</div>
 
 
 
