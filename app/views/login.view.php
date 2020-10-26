@@ -32,7 +32,7 @@
                     <input class="form-control form-control-lg" name="password" placeholder="Unesi password" type="password">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-info btn-lg btn-block">Submit</button>
+                    <button class="btn btn-info btn-lg btn-block">Prijavi se</button>
                 </div>
 				 <div class="mt-0">
         
