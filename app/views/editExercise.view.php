@@ -1,56 +1,61 @@
 <?php require 'partials/header.php';  ?>
 
-  <div class="container-fluid"> 
-    <div class="row p-2" style='background-color:#4f4d49';> 
-          <div> 
-            <span class="text-white"> uredi zadatak </span>
-          </div> 
+<div class="under_nav">
 
-      </div>
+    <p class="under_nav_parag">Uredi zadatak</p>
 
-      <?php if(isset($_SESSION['errors'])){
-        foreach($_SESSION['errors'] as $er){
-            ?> 
-            <div class="alert alert-danger text-center" role="alert">
-                 <?php echo $er;?>
+</div>
+
+
+<div class="std_exercise_txt">
+
+    <div class="std_exe_txt"></div>
+    <div class="std_exe_txt">
+
+        <?php if(isset($_SESSION['errors'])){
+            foreach($_SESSION['errors'] as $er){
+                ?>
+                <div class="alert alert-danger text-center" role="alert">
+                    <?php echo $er;?>
+                </div>
+                <?php
+            }
+            unset($_SESSION['errors']);
+        } ?>
+
+
+
+        <form action="editExercise_post?edit_id=<?php echo $_GET['id']; ?>" method="post"  enctype="multipart/form-data">
+
+            <p class="form_parag">Naziv zadatka</p>
+            <input class="input_lec" value="<?php echo $exercises->name;?>" type="text" name="name">
+
+            <p class="form_parag">Sadrzaj zadatka</p>
+            <textarea name="content" class="textarea_std" rows="12" cols="100"><?php echo $exercises->content; ?></textarea>
+
+            <div>
+                <p class="form_parag">Rok za izradu zadatka</p>
+                <input type="date" name="dates" style="margin-bottom: 5px">
+
             </div>
-            <?php
-        }
-        unset($_SESSION['errors']);       
-    } ?>
-
-      <form action="editExercise_post?edit_id=<?php echo $_GET['id']; ?>" method="post"  enctype="multipart/form-data">
-        <div class="form-group">
-        <p class="mt-3"><b>  naziv zadatka   </b></p>
-          <input type="text"  value="<?php echo $exercises->name;?>" class="form-control col-xl-4 col-6" name="name" >
-        </div>
-        <div class="form-group">
-            <p class="mt-3"><b>  napomena  </b></p>
-            <textarea name="notice" class="form-control col-xl-4 col-8" rows="3"><?php echo $exercises->notice;?></textarea>
-          </div>
-
-          <div class="form-group">
-            <p class="mt-3"><b>  sadrzaj  </b></p>
-            <textarea name="content" class="form-control col-xl-6 col-10" rows="7"><?php echo $exercises->content;?></textarea>
-          </div>
-
-          <div class="form-group">
-            <p class="mt-3"><b>izaberi fajl  </b></p>
-            <input type="file" name="document" class="form-control-file" value="<?php echo $exercises->document;?>">
-          </div>
-          <div class="form-group row">
-            <label for="example-date-input" class="col-2 col-form-label"><b>Datum za izvrsenje</b></label>
-            <div class="col-xl-2">
-              <input class="form-control" type="date" name="dates"  value="<?php echo $exercises->dates;?>">
-            </div>
+           
 
 
-          <button type="submit" class="btn btn-primary col-xl-2 col-4 btn-block mt-2">Uredi</button>
+
+            <button type="submit" class="deliver_exercise_button">Uredi</button>
 
         </form>
 
-      </div>
-	</div>
+
+
+
+    </div>
+
+    <div class="std_exe_txt"></div>
+
+
+
+</div>
 
 </body>
 </html>
