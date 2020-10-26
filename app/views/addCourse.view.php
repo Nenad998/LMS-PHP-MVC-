@@ -1,55 +1,67 @@
 <?php require 'partials/header.php';  ?>
 
-  <div class="container-fluid"> 
-      <div class="row  p-2" style='background-color:#4f4d49';> 
-          <div> 
-            <span class="text-white"> dodaj kurs </span>
-          </div> 
+<div class="under_nav">
 
-      </div>
+    <p class="under_nav_parag">Dodaj kurs</p>
 
-      <?php if(isset($_SESSION['errors'])){
-        foreach($_SESSION['errors'] as $er){
-            ?> 
-            <div class="alert alert-danger text-center" role="alert">
-                 <?php echo $er;?>
-            </div>
-            <?php
-        }
-        unset($_SESSION['errors']);       
-    } ?>
+</div>
 
-      <form action="addCourses_post" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-        <p class="mt-3"><b>  naziv kursa   </b></p>
-          <input type="text" name="name" class="form-control col-xl-4 col-6">
-        </div>
+<div class="std_exercise_txt">
 
-          <div class="form-group">
-            <p class="mt-3"><b>  sadrzaj  </b></p>
-            <textarea name="description" class="form-control col-xl-6 col-10"  rows="7"></textarea>
-          </div>
+    <div class="std_exe_txt"></div>
+    <div class="std_exe_txt">
 
-          <div class="form-group col-xl-2">
-            <p class="mt-3"><b>izaberi fajl  </b></p>
-            <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
-          </div>
+        <?php if(isset($_SESSION['errors'])){
+            foreach($_SESSION['errors'] as $er){
+                ?>
+                <div class="flash_message">
+                    <?php echo $er;?>
+                </div>
+                <?php
+            }
+            unset($_SESSION['errors']);
+        } ?>
 
-          <div class="form-group col-xl-2">
-            
-            <select class="form-control"  name="teacher_id">
-              <option>Izaberi profesora</option>
-              <?php foreach($users as $user) {    ?> 
-                <option value="<?php echo $user->id;?>"> <?php echo $user->name;  ?>  </option>
+
+
+        <form action="addCourses_post" method="post" enctype="multipart/form-data">
+
+            <p class="form_parag">Naziv kursa</p>
+            <input class="input_lec" type="text" name="name">
+
+            <p class="form_parag">Sadrzaj kursa</p>
+            <textarea name="description" class="textarea_std" rows="12" cols="100" ></textarea><br>
+            <div>
+            <select class="select_teacher"  name="teacher_id">
+                <option><p class="form_parag">Izaberi profesora</p></option>
+                <?php foreach($users as $user) {    ?>
+                    <option value="<?php echo $user->id;?>"> <?php echo $user->name;  ?>  </option>
                 <?php } ?>
 
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary col-xl-2 col-4 btn-block mt-2">Dodaj</button>
+            </select
+            </div>
 
-      </form>
+            <div>
+                <p class="form_parag">Kreiraj cenu</p>
+                <input type="number" class="input_course" name="price">
+            </div>
 
-     </div>
+
+
+            <button type="submit" class="deliver_exercise_button">Dodaj</button>
+
+        </form>
+
+
+
+
+    </div>
+
+    <div class="std_exe_txt"></div>
+
+
+
+</div>
 
 
 </body>
