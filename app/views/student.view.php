@@ -1,36 +1,36 @@
 <?php require 'partials/header.php';  ?>
 <title>Ucenik</title>
 
-  <div class="container-fluid mt-2  h-75 d-inline-block ">
-    <div class="row "> 
-      <div class="col-sm-12 col-xl-12  text-center p-2" style='background-color:#4f4d49';>
+<div class="under_nav">
 
-          <h4 class="text-white">Spisak kurseva koje pohadjate</h4> 
-          
-              </div>
-             
-            </div>
-            <a href="buy_course" class="btn btn-primary mt-2" role="button" aria-pressed="true">kupi kurs</a>
-         
+<p class="under_nav_parag">Spisak kurseva koje pohadjate</p>
 
-          <div class="row mt-3">
-            <?php  foreach ($courses as $course) { ?>
-              <div class="col-4">
-               <div class="card mb-2 mt-2"> 
-               <div class="card-header text-center" style='background-color:#4f4d49';> <a class="text-white" href="teacher_on_course?id=<?php echo $course->id; ?>">profesor na kursu </a>  </div>
-                <div class="card-body text-center" style='background-color:#058205';><h4 class="text-white"> <?php echo $course->name; ?> </h4> </div>
-                <div class="card-footer text-center" style='background-color:#4f4d49';> <a class="text-white" href="student_course?id=<?php   echo $course->id; ?>"> pogledaj vise</a>  </div>
-               
-               
-               </div>
-              
-              
-              </div>
-            
-              <?php }?>
-          </div>
-          
-  </div>
+</div>
+
+<a href="buy_course"> <button class="buy_course_button">Kupi kurs</button> </a>
+
+
+<div class="wrapper">
+
+    <?php  foreach ($courses as $course) { ?>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-subject">  <?php echo $course->name; ?> </h4>
+        <p class="card-name"> <a  href="teacher_on_course?id=<?php echo $course->id; ?>">Profesor na kursu</a> </p>
+
+        <div class="btn">  <a href="student_course?id=<?php   echo $course->id; ?>" class="btn_a">Pogledaj vise</a> </div>
+    </div>
+
+</div>
+
+
+    <?php }?>
+
+
+
+</div>
+
 
 </body>
 </html>
