@@ -1,34 +1,30 @@
 <?php require 'partials/header.php';  ?>
 
-  <div class="container-fluid mt-2  h-75 d-inline-block ">
-    <div class="row "> 
-      <div class="col-sm-12 col-xl-12  text-center p-2" style='background-color:#4f4d49';>
+<div class="under_nav">
 
-          <h4 class="text-white"><?php echo $lecture->name;?></h4>   
+    <p class="under_nav_parag"><?php echo  $lecture->name;  ?></p>
 
-        </div>
-        <div class="col-xl-2"> </div>
-         <div class="col-xl-8 mt-3"> 
-         <p class="text-justify"> <?php echo $lecture->content;?>  </p>
-
-         <table class="table col-xl-12  text-center mt-3">
-             <tbody>
-             <?php foreach($lecture->exe as $lect){ ?>
-               <tr>
-               <td><b><?php echo $lect->name; ?> </b></td>
-               <td><a id="pogledaj_lekc" href="student_exercises?exe_id=<?php echo $lect->id; ?>"><button class="btn btn-primary btn-block ">Pogledaj zadatak</button></a></td>
-               <td><?php echo "<b>datum izvrsenja:</b> " . date('d.m.Y',strtotime($lect->dates)); ?></td>
-
-                 <tr>
-                <?php } ?>
-             </tbody>
-          </table>
-          </div>
-    </div>
+</div>
 
 
-   </div>
 
+<div class="std_lecture_txt">
+
+    <div class="std_item_txt"></div>
+    <div class="std_item_txt"><p><?php echo $lecture->content;?></p></div>
+    <div class="std_item_txt"></div>
+
+
+
+</div>
+
+<div class="std_lecture">
+    <?php foreach($lecture->exe as $lect){ ?>
+    <div class="std_item"><b><?php echo $lect->name; ?></b></div>
+    <div class="std_item" id="item"><a href="student_exercises?exe_id=<?php echo $lect->id; ?>">Pogledaj zadatak </a></div>
+    <div class="std_item"><?php echo "<b>datum izvrsenja:</b> " . date('d.m.Y',strtotime($lect->dates)); ?></div>
+    <?php } ?>
+</div>
 
 </body>
 </html>
