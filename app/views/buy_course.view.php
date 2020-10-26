@@ -1,45 +1,39 @@
 <?php require 'partials/header.php';  ?>
 
+<div class="under_nav">
 
+    <p class="under_nav_parag">Svi kursevi</p>
 
+</div>
 
-<div class="container-fluid mt-2  h-75 d-inline-block ">
-    <div class="row "> 
-      <div class="col-sm-12 col-xl-12  text-center p-2" style='background-color:#4f4d49';>
+<?php if(isset($_SESSION['error'])){ ?>
+    <div class="flash_message" role="alert"><h2><?php echo $_SESSION['error']; unset($_SESSION['error']);?></h2></div>
 
-          <h4 class="text-white">Svi kursevi</h4>   
+<?php } ?>
 
-              </div>
+<div class="wrapper">
+
+    <?php  foreach ($courses as $course) { ?>
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-subject">  <?php echo $course->name; ?> </h4>
+                <p class="card-name"> <a  href="description_course?id=<?php echo $course->id; ?>">Pogledaj vise</a> </p>
+
+                <div class="btn">  <a href="over?id=<?php echo $course->id;?>" class="btn_a">Kupi</a> </div>
             </div>
-            <?php if(isset($_SESSION['error'])){ ?>
-                <div class="alert alert-danger text-center " role="alert"><h2><?php echo $_SESSION['error']; unset($_SESSION['error']);?></h2></div>
 
-            <?php } ?>
-
-          <div class="row mt-3">
-          <?php  foreach($courses as $course) { ?>
-              <div class="col-4">
-               <div class="card mb-2 mt-2"> 
-               <div class="card-header text-center" style='background-color:#4f4d49';> <a class="text-white" href="description_course?id=<?php echo $course->id; ?>">Pogledaj vise </a>  </div>
-                <div class="card-body text-center" style='background-color:#058205';><h4 class="text-white"> <?php echo $course->name; ?> </h4> </div>
-                <div class="card-footer text-center" style='background-color:#4f4d49';> <a class="text-white" href="over?id=<?php echo $course->id;?>">kupi</a>  </div>
-               
-               
-               </div>
-              
-              
-              </div>
-            
-              <?php }?>
-          </div>
-          
-          
-          
-
-  </div> 
+        </div>
 
 
-   
+    <?php }?>
+
+
+
+
+
+</div>
+
 
 </body>
 </html>
