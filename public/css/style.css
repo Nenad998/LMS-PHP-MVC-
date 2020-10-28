@@ -422,11 +422,12 @@ p.card-name a:hover{
 }
 
 .std_item {
-    text-align: center;
+   /* text-align: center;*/
     padding: 10px;
     font-size: 17px;
     margin-bottom: 20px;
-
+    align-self: center;  /* citaj vise  o ovome */
+    justify-self: center; /* citaj vise  o ovome */
 }
 
 #look{
@@ -434,6 +435,7 @@ p.card-name a:hover{
     background: #1289A7;
     border-radius: 5px;
     margin-bottom: 20px;
+    width: 15vw;
 
 }
 #look a{
@@ -449,6 +451,7 @@ p.card-name a:hover{
     background: #ffa801;
     border-radius: 5px;
     margin-bottom: 20px;
+    width: 10vw;
 }
 #edit a{
     color: #fff;
@@ -463,6 +466,7 @@ p.card-name a:hover{
     background: #c0392b;
     border-radius: 5px;
     margin-bottom: 20px;
+    width: 10vw;
 
 }
 #delete a{
@@ -478,6 +482,7 @@ p.card-name a:hover{
     background: #009432;
     border-radius: 5px;
     margin-bottom: 20px;
+    width: 10vw;
 
 }
 #done a{
@@ -501,7 +506,7 @@ p.card-name a:hover{
     text-decoration: underline;
 }
 
-
+/*
 @media only screen and (min-width: 320px) and (max-width: 649px) {
 
     #look{
@@ -538,21 +543,87 @@ p.card-name a:hover{
     }
 
 }
+
+*/
+
+@media(max-width: 500px){
+    .std_item{
+        width: 15vw;
+    }
+
+}
+
 /* end table */
 
 /* custom table */
 
+
 .table{
     width: 100%;
+    border-collapse: collapse;
 }
-.th{
-    font-size: 18px;
-    padding:20px;
-}
-#name{
-    color: #4f4d49;
-    text-align:center;
-    font-size: 17px;
+.table thead th{
+    padding-top: 20px;
+    font-size: 19px;
 }
 
+.table td{
+    padding:12px 15px;
+    text-align: center;
+    font-size:18px;
+    color: #4f4d49;
+}
+
+.table th{
+    font-weight: bold;
+}
+
+@media(max-width: 500px){
+    .table thead{
+        display: none;
+
+    }
+
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 60vw;
+    }
+    .table tr{
+        margin-bottom:15px;
+    }
+    .table td{
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+        border-bottom: 1px solid #4f4d49;
+    }
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left:0;
+        width: 50%;
+        padding-left:15px;
+        font-size:18px;
+        font-weight: bold;
+        text-align: left;
+        color: black;
+
+    }
+}
+
+
 /* end custom table */
+
+/* download parag */
+
+.download_parag{
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #4f4d49;
+}
+.download_parag:hover{
+    text-decoration: underline;
+}
