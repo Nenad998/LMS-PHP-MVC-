@@ -81,6 +81,8 @@ use Validation;
 
         $lecture_model= new Lecture;
         $_POST['course_id']=$_GET['course_id'];
+        $file=$lecture_model->addFile('document','files');
+        $_POST['document']=$file;
     
         $lecture=$lecture_model->insert($_POST);
 
@@ -116,6 +118,8 @@ use Validation;
              }
 
         $lecture_model= new Lecture;
+        $file=$lecture_model->addFile('document','files');
+        $_POST['document']=$file;
      
         $lecture_model->updates($_POST,'id',$_GET['edit_id']);
 
@@ -210,6 +214,8 @@ use Validation;
 
         $exercise_model=new Exercise;
         $_POST['lecture_id']=$_GET['lecture_id'];
+        $file=$exercise_model->addFile('document','files');
+        $_POST['document']=$file;
 
         $exercise=$exercise_model->insert($_POST);
   
@@ -246,6 +252,8 @@ use Validation;
         } 
 
         $exercise= new Exercise;
+        $file=$exercise->addFile('document','files');
+        $_POST['document']=$file;
  
         $exercises=$exercise->updates($_POST,'id',$_GET['edit_id']);
 
@@ -261,8 +269,17 @@ use Validation;
 
        redirect('lectures?id='.$_GET['eid']);
     }
+    
+    public function content()
+    {
+        is_teacher();
+        $usersWork_model= new UsersWork;
+        $content=$usersWork_model->find($_GET['id']);
+
+
+        return view('teacher_content', compact('content'));
+
+    }
    
-
-
 
 }
