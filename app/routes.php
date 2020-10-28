@@ -35,6 +35,7 @@ $router->post('addExercise_post', 'TeacherController@addExe');
 $router->get('editExercise', 'TeacherController@editExerciseView');
 $router->post('editExercise_post', 'TeacherController@editExercise');
 $router->get('deleteExercise', 'TeacherController@deleteExercise');
+$router->get('teacher_content', 'TeacherController@content');
 $router->get('admin', 'AdminController@allCourses');
 $router->get('addCourses','AdminController@addCourses');
 $router->post('addCourses_post','AdminController@store');
