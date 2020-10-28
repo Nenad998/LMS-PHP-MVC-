@@ -11,7 +11,7 @@
 <div class="std_lecture_txt">
 
     <div class="std_item_txt"></div>
-    <div class="std_item_txt"><p><?php echo $lecture->content;?></p></div>
+    <div class="std_item_txt"><p><?php echo $lecture->content;?></p><br>  <a class="download_parag" target="_blank" href="/<?php echo $lecture->document;?>">Preuzmi lekciju</a></div>
     <div class="std_item_txt"></div>
 
 
